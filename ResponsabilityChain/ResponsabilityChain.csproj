@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\Approver.cs" />
+    <Compile Include="BL\Secretary.cs" />
     <Compile Include="BL\Director.cs" />
     <Compile Include="BL\President.cs" />
     <Compile Include="BL\Purchase.cs" />

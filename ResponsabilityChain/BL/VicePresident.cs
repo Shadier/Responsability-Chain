@@ -12,8 +12,8 @@ namespace ResponsabilityChain.BL
         {
             if (purchase.Amount < 25000.0)
             {
-                Console.WriteLine("{0} approved request# {1}",
-                  this.GetType().Name, purchase.Number);
+                Console.WriteLine("{0} approved request# {1} ('{2}')",
+                  this.GetType().Name, purchase.Number, purchase.Purpose);
             }
             else if (successor != null)
             {

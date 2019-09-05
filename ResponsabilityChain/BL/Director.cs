@@ -10,10 +10,10 @@ namespace ResponsabilityChain.BL
     {
         public override void ProcessRequest(Purchase purchase)
         {
-            if (purchase.Amount < 10000.0)
+            if (purchase.Amount < 5000.0)
             {
-                Console.WriteLine("{0} approved request# {1}",
-                  this.GetType().Name, purchase.Number);
+                Console.WriteLine("{0} approved request# {1} ('{2}')",
+                  this.GetType().Name, purchase.Number, purchase.Purpose);
             }
             else if (successor != null)
             {

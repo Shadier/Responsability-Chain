@@ -12,15 +12,17 @@ namespace ResponsabilityChain.BL
         {
             if (purchase.Amount < 100000.0)
             {
-                Console.WriteLine("{0} approved request# {1}",
-                  this.GetType().Name, purchase.Number);
+                Console.WriteLine("{0} approved request# {1} ('{2}')",
+                  this.GetType().Name, purchase.Number, purchase.Purpose);
             }
-            else
-
+            else if (successor != null)
             {
+                successor.ProcessRequest(purchase);
+            }
+            else{
                 Console.WriteLine(
-                  "Request# {0} requires an executive meeting!",
-                  purchase.Number);
+                  "Request# {0} ('{1}') requires an executive meeting!",
+                  purchase.Number, purchase.Purpose);
             }
         }
     }
